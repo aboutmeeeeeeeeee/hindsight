@@ -5,22 +5,22 @@
 <title>About Me</title>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Pixelify+Sans:wght@500;700&amp;family=Zen+Maru+Gothic:wght@500;700&amp;family=Noto+Serif+TC:wght@500;700&amp;display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b4f8f;--card:#c2e0ff;--ink:#0b4a86;--soft:#3069ab;--font:'DotGothic16','Pixelify Sans',monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#0b4f8f;--card:#c2e0ff;--ink:#0b4a86;--tx:#0b4a86;--soft:#3069ab;--font:'DotGothic16','Pixelify Sans',monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:var(--font);padding:18px 14px 60px}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--tx);font-family:var(--font);padding:18px 14px 60px}
 #bar,#card{max-width:880px;margin:0 auto;background:var(--card)}
 #bar{margin-bottom:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;border:2px solid var(--ink);border-radius:10px;padding:8px 10px;font-size:13px}
 .sw{width:22px;height:22px;border-radius:50%;padding:0}
-select,button,input[type=color]{font:inherit;font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:3px 7px;cursor:pointer}
+select,button,input[type=color]{font:inherit;font-size:13px;color:var(--tx);background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:3px 7px;cursor:pointer}
 input[type=color]{padding:0;width:28px;height:26px}
 button:hover{background:var(--ink);color:var(--card)}
 #card{border-radius:14px;padding:22px;box-shadow:8px 8px 0 rgba(0,0,0,.35)}
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;border-bottom:10px solid var(--soft);padding-bottom:6px;margin-bottom:18px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;border-bottom:10px solid var(--ink);padding-bottom:6px;margin-bottom:18px}
 h1{margin:0;font-size:clamp(40px,10vw,84px);line-height:1;font-weight:400;white-space:nowrap;font-kerning:none;font-feature-settings:'kern' 0,'palt' 0;letter-spacing:.04em;text-rendering:geometricPrecision}
 .bcw{width:min(38%,260px)}
 #bcsvg svg{display:block;width:100%;height:46px;fill:var(--ink)}
-#bcin{width:100%;border:0;background:transparent;color:var(--ink);font:inherit;font-size:12px;letter-spacing:.3em;text-align:center;padding:2px}
+#bcin{width:100%;border:0;background:transparent;color:var(--tx);font:inherit;font-size:12px;letter-spacing:.3em;text-align:center;padding:2px}
 body.edit #bcin{outline:2px dashed var(--soft)}
 .grid{display:grid;grid-template-columns:1.5fr 1fr;gap:18px}
 
@@ -31,7 +31,7 @@ body.edit #bcin{outline:2px dashed var(--soft)}
 .photo img,.im img{width:100%;height:100%;object-fit:cover;display:block}
 .cap{text-align:right;font-size:14px;margin-top:6px}
 .links{margin-top:20px;display:grid;gap:10px}
-.lk{display:flex;align-items:center;gap:8px;border:3px solid var(--ink);padding:10px 14px;font-size:16px;color:var(--ink);text-decoration:none;background:var(--card);box-shadow:4px 4px 0 var(--soft)}
+.lk{display:flex;align-items:center;gap:8px;border:3px solid var(--ink);padding:10px 14px;font-size:16px;color:var(--tx);text-decoration:none;background:var(--card);box-shadow:4px 4px 0 var(--soft)}
 .lk .t{flex:1;text-align:center}.lk button{padding:0 6px;font-size:12px}
 .foot{height:26px;background:var(--ink);margin-top:22px}
 /* blocks */
@@ -50,7 +50,7 @@ body:not(.edit) .tx:empty{display:none}
 .car::-webkit-scrollbar{display:none}.sl{flex:0 0 100%;scroll-snap-align:start;padding-right:1px}
 .dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
 .dots i{width:8px;height:8px;border-radius:50%;border:2px solid var(--ink)}.dots i.on{background:var(--ink)}
-.mu{display:inline-block;margin:6px 6px 0 0;border:2px solid var(--ink);padding:2px 9px;color:var(--ink);text-decoration:none;font-size:13px;border-radius:99px}
+.mu{display:inline-block;margin:6px 6px 0 0;border:2px solid var(--ink);padding:2px 9px;color:var(--tx);text-decoration:none;font-size:13px;border-radius:99px}
 .ed,.only-edit{display:none}
 body.edit .ed{display:inline-block}body.edit .only-edit{display:block}body.edit .ctl{display:flex}
 body.edit [contenteditable=true]{outline:2px dashed var(--soft);outline-offset:2px;cursor:text}
@@ -58,8 +58,8 @@ body:not(.edit) .lk button{display:none}
 #mo{display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.45);align-items:center;justify-content:center;padding:16px}
 .md{background:var(--card);border:3px solid var(--ink);border-radius:14px;padding:18px;width:min(380px,100%);box-shadow:6px 6px 0 var(--soft)}
 .md h3{margin:0 0 8px;font-size:17px;font-weight:500}.md p{margin:0 0 10px;font-size:13px;line-height:1.6}
-.mi{display:block;width:100%;margin-bottom:10px;border:2px solid var(--ink);border-radius:99px;background:var(--card);color:var(--ink);font:inherit;font-size:14px;padding:8px 14px;outline:0}
-.mi::placeholder{color:var(--ink);opacity:.35}
+.mi{display:block;width:100%;margin-bottom:10px;border:2px solid var(--ink);border-radius:99px;background:var(--card);color:var(--tx);font:inherit;font-size:14px;padding:8px 14px;outline:0}
+.mi::placeholder{color:var(--tx);opacity:.35}
 .er{color:#c0392b;font-size:12px;margin:-4px 0 8px 6px}.er:empty{display:none}
 .mb{display:flex;gap:8px;justify-content:flex-end}.mb button{border-radius:99px;padding:5px 16px}
 .im .nv{top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;padding:0;font-size:18px;line-height:1;opacity:.92}
@@ -84,6 +84,13 @@ body:not(.edit) .lk button{display:none}
 .ce{display:flex;gap:8px;border:2px solid var(--ink);padding:6px;min-width:0}
 .ce .im{flex:0 0 42%;aspect-ratio:1;height:auto}.ce .bt{margin:0;flex:1;min-width:0;font-size:13px}
 .hf .cl{flex:1;min-height:0;overflow:auto}
+.pl{border-radius:99px;padding:2px 10px;margin:6px 6px 0 0;font-size:13px}.pw{flex-basis:100%}
+.tg{appearance:none;-webkit-appearance:none;width:38px;height:22px;border-radius:99px;border:2px solid var(--ink);background:var(--card);position:relative;vertical-align:middle;cursor:pointer;margin:0 6px 0 0}
+.tg::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--ink);transition:left .15s}
+.tg:checked{background:var(--ink)}.tg:checked::after{left:18px;background:var(--card)}
+.tg:disabled{opacity:.35;filter:grayscale(1);cursor:not-allowed}
+h1 .so{width:.8em;height:.8em;fill:var(--ink);vertical-align:-.05em;margin:0 .02em}
+.rt{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.rt button.on{background:var(--ink);color:var(--card)}
 </style>
 </head>
 <body>
@@ -91,6 +98,8 @@ body:not(.edit) .lk button{display:none}
   <b>✦ 設定</b><span id="sws"><button class="sw" style="background: linear-gradient(135deg, rgb(11, 79, 143) 50%, rgb(194, 224, 255) 50%);"></button><button class="sw" style="background: linear-gradient(135deg, rgb(122, 43, 82) 50%, rgb(255, 217, 236) 50%);"></button><button class="sw" style="background: linear-gradient(135deg, rgb(47, 93, 58) 50%, rgb(216, 242, 212) 50%);"></button><button class="sw" style="background: linear-gradient(135deg, rgb(74, 58, 138) 50%, rgb(227, 220, 255) 50%);"></button><button class="sw" style="background: linear-gradient(135deg, rgb(243, 233, 216) 50%, rgb(255, 250, 240) 50%);"></button><button class="sw" style="background: linear-gradient(135deg, rgb(21, 22, 26) 50%, rgb(42, 44, 51) 50%);"></button></span>
   <label>背景 <input type="color" id="cbg" value="#0b4f8f"></label>
   <label>卡片 <input type="color" id="ccard" value="#c2e0ff"></label>
+  <label>框線 <input type="color" id="cink" value="#0b4a86"></label>
+  <label>文字 <input type="color" id="ctx" value="#0b4a86"></label>
   <label>字體 <select id="font">
     <option value="'DotGothic16','Pixelify Sans',monospace">像素 DotGothic</option>
     <option value="'Pixelify Sans','DotGothic16',monospace">像素 Pixelify</option>
@@ -100,8 +109,9 @@ body:not(.edit) .lk button{display:none}
   <button id="tog">✎ 編輯模式：關</button><button id="rst">重設</button><button id="exp">⬇ 匯出公開版</button><button id="exp2">⬇ 匯出可編輯版</button>
 </div>
 <div id="card">
-  <div class="head"><h1>ABOUT Me</h1>
+  <div class="head"><h1 id="ttl">ABOUT Me</h1>
     <div class="bcw"><div id="bcsvg"><svg viewBox="0 0 66 40" preserveAspectRatio="none"><rect width="2" height="40"></rect><rect x="3" width="1" height="40"></rect><rect x="6" width="3" height="40"></rect><rect x="11" width="1" height="40"></rect><rect x="15" width="2" height="40"></rect><rect x="19" width="1" height="40"></rect><rect x="22" width="3" height="40"></rect><rect x="27" width="1" height="40"></rect><rect x="31" width="2" height="40"></rect><rect x="35" width="1" height="40"></rect><rect x="39" width="2" height="40"></rect><rect x="43" width="1" height="40"></rect><rect x="46" width="3" height="40"></rect><rect x="51" width="1" height="40"></rect><rect x="54" width="3" height="40"></rect><rect x="59" width="1" height="40"></rect><rect x="61" width="1" height="40"></rect><rect x="64" width="2" height="40"></rect></svg></div><input id="bcin" maxlength="20" inputmode="numeric" title="輸入你喜歡的數字" readonly=""></div></div>
+  <div class="only-edit tt" style="margin:-6px 0 14px"><input id="ttin" class="mi" placeholder="標題文字" style="max-width:240px;display:inline-block;width:auto;margin:0 10px 0 0"><label style="font-size:13px"><input type="checkbox" class="tg" id="stsw">把 O 換成星星</label></div>
   <div id="top">
     <div class="grid">
       <div class="box">
@@ -126,7 +136,7 @@ body:not(.edit) .lk button{display:none}
 </div>
 <input type="file" accept="image/*" id="f" hidden="" multiple="">
 <div id="mo"></div>
-<script>window.__INIT={"bc":"20260521","b":[{"s":"xl","l":"grid","p":[],"t":"這是一個區塊。打開「編輯模式」後，可以調整大小、排版、加照片與音樂 :)","m":null}],"h":"\n    \u003cdiv class=\"grid\">\n      \u003cdiv class=\"box\">\n        \u003ch2 data-e=\"\" contenteditable=\"false\">JUST FOR A BRIEF INTRODUCTION :)\u003c/h2>\n        \u003cdiv class=\"sec\" data-e=\"\" contenteditable=\"false\">＊KPOP\u003c/div>\n        \u003cdiv class=\"cols\">\u003cdiv data-e=\"\" contenteditable=\"false\">KickFlip — Donghyeon (Lee)\u003c/div>\u003cdiv data-e=\"\" contenteditable=\"false\">RIIZE — Osaki Shotaro\u003c/div>\u003cdiv data-e=\"\" contenteditable=\"false\">NEXZ — Nishiyama Yuki\u003c/div>\u003cdiv data-e=\"\" contenteditable=\"false\">Tomorrow X Together — Taehyun\u003c/div>\u003c/div>\n        \u003cdiv class=\"sec\" data-e=\"\" contenteditable=\"false\">＊OTHERS\u003c/div>\n        \u003cdiv class=\"row\" data-e=\"\" contenteditable=\"false\">Authors — 不朽, 川村元氣\u003c/div>\n        \u003cdiv class=\"row\" data-e=\"\" contenteditable=\"false\">Singers/Band etc. — LANY, RM (BTS), Fujii Kaze, DAY6, etc...\u003c/div>\n      \u003c/div>\n      \u003cdiv>\u003cdiv class=\"photo\" id=\"photo\" title=\"點擊上傳照片\">\u003cspan>＋ 點擊上傳大頭照\u003c/span>\u003c/div>\n        \u003cdiv class=\"cap\" data-e=\"\" contenteditable=\"false\">also attracted by some solitude.\u003c/div>\u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"links\" id=\"links\">\n      \u003ca class=\"lk\" href=\"#\">\u003cspan class=\"t\" data-e=\"\" contenteditable=\"false\">Instagram\u003c/span>\u003cbutton class=\"ed\" data-a=\"url\">網址\u003c/button>\u003cbutton class=\"ed\" data-a=\"dl\">×\u003c/button>\u003c/a>\n    \u003c/div>\n  ","st":"--bg: #0b4f8f; --card: #c2e0ff; --ink: #0b4a86; --soft: #0b4a86; --font: 'DotGothic16','Pixelify Sans',monospace;","f":"'DotGothic16','Pixelify Sans',monospace","v":1795272590914};</script><script>
+<script>window.__INIT={"bc":"20260521","b":[{"s":"xl","l":"grid","p":[],"t":"這是一個區塊。打開「編輯模式」後，可以調整大小、排版、加照片與音樂 :)","m":null}],"h":"\n    \u003cdiv class=\"grid\">\n      \u003cdiv class=\"box\">\n        \u003ch2 data-e=\"\" contenteditable=\"false\">JUST FOR A BRIEF INTRODUCTION :)\u003c/h2>\n        \u003cdiv class=\"sec\" data-e=\"\" contenteditable=\"false\">＊KPOP\u003c/div>\n        \u003cdiv class=\"cols\">\u003cdiv data-e=\"\" contenteditable=\"false\">KickFlip — Donghyeon (Lee)\u003c/div>\u003cdiv data-e=\"\" contenteditable=\"false\">RIIZE — Osaki Shotaro\u003c/div>\u003cdiv data-e=\"\" contenteditable=\"false\">NEXZ — Nishiyama Yuki\u003c/div>\u003cdiv data-e=\"\" contenteditable=\"false\">Tomorrow X Together — Taehyun\u003c/div>\u003c/div>\n        \u003cdiv class=\"sec\" data-e=\"\" contenteditable=\"false\">＊OTHERS\u003c/div>\n        \u003cdiv class=\"row\" data-e=\"\" contenteditable=\"false\">Authors — 不朽, 川村元氣\u003c/div>\n        \u003cdiv class=\"row\" data-e=\"\" contenteditable=\"false\">Singers/Band etc. — LANY, RM (BTS), Fujii Kaze, DAY6, etc...\u003c/div>\n      \u003c/div>\n      \u003cdiv>\u003cdiv class=\"photo\" id=\"photo\" title=\"點擊上傳照片\">\u003cspan>＋ 點擊上傳大頭照\u003c/span>\u003c/div>\n        \u003cdiv class=\"cap\" data-e=\"\" contenteditable=\"false\">also attracted by some solitude.\u003c/div>\u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"links\" id=\"links\">\n      \u003ca class=\"lk\" href=\"#\">\u003cspan class=\"t\" data-e=\"\" contenteditable=\"false\">Instagram\u003c/span>\u003cbutton class=\"ed\" data-a=\"url\">網址\u003c/button>\u003cbutton class=\"ed\" data-a=\"dl\">×\u003c/button>\u003c/a>\n    \u003c/div>\n  ","st":"--bg: #0b4f8f; --card: #c2e0ff; --ink: #0b4a86; --soft: #0b4a86; --font: 'DotGothic16','Pixelify Sans',monospace;","f":"'DotGothic16','Pixelify Sans',monospace","v":1795284297986};</script><script>
 var $=function(s){return document.querySelector(s)},KEY='aboutme-v2',EDIT=false,T='main';
 var S={bc:'20260521',b:[{s:'xl',l:'grid',p:[],t:'這是一個區塊。打開「編輯模式」後，可以調整大小、排版、加照片與音樂 :)',m:null}]};
 var OR={v:'直式（方形照片）',p:'橫幅照片（4:3）',f:'橫向滿版（占滿一行）'};var SZ={xs:'極小 1/4',s:'小 1/3',m:'中 1/2',l:'大 2/3',xl:'極大 全寬'};
@@ -134,7 +144,7 @@ var LY={grid:'照片組＋下方文字',side:'照片＋旁邊文字',one:'滑動
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function opts(o,v){return Object.keys(o).map(function(k){return '<option value="'+k+'"'+(k==v?' selected':'')+'>'+o[k]+'</option>'}).join('')}
 function tx(b,i,v,f){return '<div class="tx" data-b="'+b+'" data-i="'+i+(f?'" data-f="'+f:'')+'" data-ph="輸入文字…" contenteditable="'+EDIT+'">'+esc(v)+'</div>'}
-function mu(m,b,i){return (m?'<a class="mu" href="'+esc(m.u)+'" target="_blank" rel="noopener">♪ '+esc(m.n?m.n+' · '+plat(m.u):plat(m.u))+'</a>':'')+'<button class="ed" data-a="mu" data-b="'+b+'" data-i="'+i+'">♪ '+(m?'改':'加')+'音樂</button>'}
+function mu(m,b,i){var e=m&&embedOf(m.u);return (m?'<a class="mu" href="'+esc(m.u)+'" target="_blank" rel="noopener">♪ '+esc(m.n||plat(m.u))+'</a>':'')+(e?'<button class="pl" data-a="pl" data-em="'+esc(e[0])+'" data-h="'+e[1]+'">▶ 播放</button>':'')+'<button class="ed" data-a="mu" data-b="'+b+'" data-i="'+i+'">♪ '+(m?'改':'加')+'音樂</button>'+(e?'<div class="pw"></div>':'')}
 function im(x,b,k,n,c){return '<div class="im"><img src="'+x.i+'" alt="">'+(c&&n>1?(k?'<button class="nv pv" data-a="pv" aria-label="上一張">‹</button>':'')+(k<n-1?'<button class="nv nx" data-a="nx" aria-label="下一張">›</button>':''):'')+'<button class="ed" data-a="rp" data-b="'+b+'" data-i="'+k+'">×</button></div>'}
 function block(b,i){
   var p=b.p,body,n=p.length;
@@ -166,14 +176,14 @@ $('#tog').onclick=function(){setEdit(!EDIT);save()};
 /* themes */
 var themes=[['#0b4f8f','#c2e0ff','#0b4a86'],['#7a2b52','#ffd9ec','#7a2b52'],['#2f5d3a','#d8f2d4','#2f5d3a'],['#4a3a8a','#e3dcff','#4a3a8a'],['#f3e9d8','#fffaf0','#4a3a2a'],['#15161a','#2a2c33','#e8e8f0']];
 function lum(h){var n=parseInt(h.slice(1),16);return (n>>16)*.3+((n>>8)&255)*.59+(n&255)*.11}
-function setTheme(bg,c,ink){var r=document.documentElement.style,d=lum(c)>140;r.setProperty('--bg',bg);r.setProperty('--card',c);r.setProperty('--ink',ink||(d?'#0b2f57':'#e8f1ff'));r.setProperty('--soft',ink||(d?'#3069ab':'#8aa4c8'));$('#cbg').value=bg;$('#ccard').value=c;save()}
-themes.forEach(function(t){var b=document.createElement('button');b.className='sw';b.style.background='linear-gradient(135deg,'+t[0]+' 50%,'+t[1]+' 50%)';b.onclick=function(){setTheme(t[0],t[1],t[2])};$('#sws').appendChild(b)});
-$('#cbg').oninput=$('#ccard').oninput=function(){setTheme($('#cbg').value,$('#ccard').value)};
+function setTheme(bg,c,ink,tx){var r=document.documentElement.style;ink=ink||(lum(c)>140?'#0b2f57':'#e8f1ff');tx=tx||ink;r.setProperty('--bg',bg);r.setProperty('--card',c);r.setProperty('--ink',ink);r.setProperty('--soft',ink);r.setProperty('--tx',tx);syncC();save()}
+$('#sws').innerHTML='';themes.forEach(function(t){var b=document.createElement('button');b.className='sw';b.style.background='linear-gradient(135deg,'+t[0]+' 50%,'+t[1]+' 50%)';b.onclick=function(){setTheme(t[0],t[1],t[2])};$('#sws').appendChild(b)});
+$('#cbg').oninput=$('#ccard').oninput=$('#cink').oninput=$('#ctx').oninput=function(){setTheme($('#cbg').value,$('#ccard').value,$('#cink').value,$('#ctx').value)};
 $('#font').onchange=function(){document.documentElement.style.setProperty('--font',this.value);save()};
 /* images */
 function load(file,cb){var r=new FileReader();r.onload=function(){var m=new Image();m.onload=function(){var k=Math.min(1,900/Math.max(m.width,m.height)),c=document.createElement('canvas');c.width=m.width*k;c.height=m.height*k;c.getContext('2d').drawImage(m,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',.8))};m.src=r.result};r.readAsDataURL(file)}
 document.addEventListener('click',function(e){if(EDIT&&e.target.closest('#photo')){T='main';$('#f').multiple=false;$('#f').click()}});
-$('#f').onchange=function(){var fs=Array.from(this.files);this.value='';fs.forEach(function(f){load(f,function(u){if(T=='main'){$('#photo').innerHTML='<img src="'+u+'" alt="">'}else{S.b[T].p.push({i:u,t:'',m:null});render()}save()})})};
+$('#f').onchange=function(){var fs=Array.from(this.files),t=T;this.value='';(function next(){var f=fs.shift();if(!f)return;crop(f,function(u){if(t=='main'){$('#photo').innerHTML='<img src="'+u+'" alt="">'}else{S.b[t].p.push({i:u,t:'',m:null});render()}save();next()},next,t=='main'?3/4:1)})()};
 /* top part */
 $('#addlk').onclick=function(){var a=document.createElement('a');a.className='lk';a.href='#';a.innerHTML='<span class="t" data-e contenteditable="true">新連結</span><button class="ed" data-a="url">網址</button><button class="ed" data-a="dl">×</button>';$('#links').appendChild(a);save()};
 $('#addb').onclick=function(){S.b.push({s:'m',l:'grid',p:[],t:'',m:null});render();save()};
@@ -191,7 +201,7 @@ function buildPublic(){save();var c=document.documentElement.cloneNode(true);
   c.querySelectorAll('[title]').forEach(function(x){x.removeAttribute('title')});
   var bi=c.querySelector('#bcin');bi.setAttribute('value',S.bc);bi.setAttribute('readonly','');
   var bd=c.querySelector('body');bd.classList.remove('edit');c.querySelector('#card').removeAttribute('style');
-  var s=document.createElement('script');s.textContent="document.addEventListener('click',function(e){var b=e.target.closest('.nv');if(!b)return;var c=b.closest('.car');c.scrollBy({left:(b.classList.contains('nx')?1:-1)*c.clientWidth,behavior:'smooth'})});document.querySelectorAll('.car').forEach(function(c){c.onscroll=function(){var k=Math.round(c.scrollLeft/c.clientWidth);c.nextElementSibling.querySelectorAll('i').forEach(function(d,j){d.className=j==k?'on':''})}});document.addEventListener('error',function(e){var t=e.target;if(t.classList&&t.classList.contains('ytm')){var d=document.createElement('div');d.className='ytf';d.textContent='▶ YouTube';t.replaceWith(d)}},true);function fit(){var c=document.getElementById('card'),w=document.documentElement.clientWidth-28;if(w<880){c.style.width='880px';c.style.zoom=w/880}else{c.style.width='';c.style.zoom=''}}fit();addEventListener('resize',fit);";
+  var s=document.createElement('script');s.textContent="document.addEventListener('click',function(e){var b=e.target.closest('.nv');if(!b)return;var c=b.closest('.car');c.scrollBy({left:(b.classList.contains('nx')?1:-1)*c.clientWidth,behavior:'smooth'})});document.querySelectorAll('.car').forEach(function(c){c.onscroll=function(){var k=Math.round(c.scrollLeft/c.clientWidth);c.nextElementSibling.querySelectorAll('i').forEach(function(d,j){d.className=j==k?'on':''})}});document.addEventListener('error',function(e){var t=e.target;if(t.classList&&t.classList.contains('ytm')){var d=document.createElement('div');d.className='ytf';d.textContent='▶ YouTube';t.replaceWith(d)}},true);function fit(){var c=document.getElementById('card'),w=document.documentElement.clientWidth-28;if(w<880){c.style.width='880px';c.style.zoom=w/880}else{c.style.width='';c.style.zoom=''}}fit();addEventListener('resize',fit);"+playTog.toString()+";document.addEventListener('click',function(e){var b=e.target.closest('.pl');if(b)playTog(b)});";
   bd.appendChild(s);return '<!DOCTYPE html>\n'+c.outerHTML}
 function buildEditable(){save();S.v=Date.now();save();var c=document.documentElement.cloneNode(true);
   c.querySelectorAll('#mo').forEach(function(x){x.innerHTML='';x.removeAttribute('style')});
@@ -209,6 +219,7 @@ document.addEventListener('click',function(e){
   var b=e.target.closest('button[data-a]'),lk=e.target.closest('.lk');
   if(!b){if(lk&&EDIT)e.preventDefault();return}
   var a=b.dataset.a,i=+b.dataset.b,k=+b.dataset.i;e.preventDefault();
+  if(a=='pl'){playTog(b);return}
   if(a=='pv'||a=='nx'){var c=b.closest('.car');c.scrollBy({left:(a=='nx'?1:-1)*c.clientWidth,behavior:'smooth'});return}
   if(a=='dl'){lk.remove()}
   else if(a=='url'){var h=lk.getAttribute('href'),has=h&&h!='#';ask({t:'連結網址',f:[{ph:'https://',v:has?h:''}],rm:has},function(v,t){if(t=='rm'){lk.setAttribute('href','#');lk.removeAttribute('target');deco(lk);save();return}var u=fixUrl(v[0]);if(!u)return '請輸入有效的網址';lk.setAttribute('href',u);lk.target='_blank';lk.rel='noopener';deco(lk);save()})}
@@ -220,7 +231,7 @@ document.addEventListener('click',function(e){
   else if(a=='rm'){ask({t:'刪除區塊',msg:'確定要刪除這個區塊嗎？'},function(){S.b.splice(i,1);render();save()})}
   else if(a=='up'&&i>0){S.b.splice(i-1,0,S.b.splice(i,1)[0]);render()}
   else if(a=='dn'&&i<S.b.length-1){S.b.splice(i+1,0,S.b.splice(i,1)[0]);render()}
-  else if(a=='mu'){var o=k<0?S.b[i]:S.b[i].p[k],cur=o.m;ask({t:'♪ 加入音樂',msg:'支援 Spotify、YouTube Music、Apple Music 連結',f:[{ph:'https://',v:cur?cur.u:''},{ph:'歌名（選填）',v:cur?cur.n:''}],rm:!!cur},function(v,t){if(t=='rm'){o.m=null;render();save();return}var u=fixUrl(v[0]);if(!u)return '請貼上有效的音樂連結';o.m={u:u,n:v[1]};render();save()})}
+  else if(a=='mu'){var o=k<0?S.b[i]:S.b[i].p[k],cur=o.m;ask({t:'♪ 加入音樂',msg:'支援 Spotify、YouTube Music、Apple Music。貼上連結後會自動帶入「歌名 • 歌手」（抓不到時請手動輸入）',f:[{ph:'https://',v:cur?cur.u:''},{ph:'歌名（選填）',v:cur?cur.n:''}],rm:!!cur},function(v,t){if(t=='rm'){o.m=null;render();save();return}var u=fixUrl(v[0]);if(!u)return '請貼上有效的音樂連結';o.m={u:u,n:v[1]};render();save()});autoMeta()}
   save()});
 document.addEventListener('change',function(e){var s=e.target.closest('select[data-a]');if(!s||s.id=='font')return;var i=+s.parentNode.dataset.b;if(s.dataset.a=='sz')S.b[i].s=s.value;else if(s.dataset.a=='or')S.b[i].o=s.value;else S.b[i].l=s.value;render();save()});
 document.addEventListener('input',function(e){var t=e.target;if(t.classList&&t.classList.contains('tx')){var b=S.b[+t.dataset.b],i=+t.dataset.i;var f=t.dataset.f,v=t.innerText;if(f=='ti')b.ti=v;else if(f=='cp')b.cp=v;else if(f=='kn')b.k[i].n=v;else if(i<0)b.t=v;else b.p[i].t=v}save()});
@@ -231,10 +242,29 @@ function deco(l){var o=l.querySelector('.ytm,.ytf');if(o)o.remove();var y=ytThum
 function lk(x,b,j){var y=ytThumb(x.u),d=' data-b="'+b+'" data-i="'+j+'"';return '<a class="lk'+(y?' yt':'')+'" href="'+esc(x.u||'#')+'"'+(x.u?' target="_blank" rel="noopener"':'')+'>'+y+'<span class="t tx"'+d+' data-f="kn" data-ph="連結名稱" contenteditable="'+EDIT+'">'+esc(x.n)+'</span><button class="ed" data-a="bku"'+d+'>網址</button><button class="ed" data-a="bkd"'+d+'>×</button></a>'}
 document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('.lk');if(l&&(EDIT||e.target.closest('button')))e.preventDefault()},true);
 document.addEventListener('error',function(e){var t=e.target;if(t.classList&&t.classList.contains('ytm')){var d=document.createElement('div');d.className='ytf';d.textContent='▶ YouTube';t.replaceWith(d)}},true);
-(function(){try{var d=JSON.parse(localStorage.getItem(KEY)||'null'),I=window.__INIT;if(I&&(!d||(d.v||0)<I.v))d=I;if(d){S=d;document.documentElement.setAttribute('style',d.st||'');if(d.h&&d.h.indexOf('｜')<0)$('#top').innerHTML=d.h;if(d.f){$('#font').value=d.f;document.documentElement.style.setProperty('--font',d.f)}$('#cbg').value=getComputedStyle(document.documentElement).getPropertyValue('--bg').trim()||'#0b4f8f'}}catch(e){}
+(function(){try{var d=JSON.parse(localStorage.getItem(KEY)||'null'),I=window.__INIT;if(I&&(!d||(d.v||0)<I.v))d=I;if(d){S=d;document.documentElement.setAttribute('style',d.st||'');if(d.h&&d.h.indexOf('｜')<0)$('#top').innerHTML=d.h;if(d.f){$('#font').value=d.f;document.documentElement.style.setProperty('--font',d.f)}syncC()}}catch(e){}
 drawBC();setEdit(false)})();
+function syncC(){var g=function(k,f){return getComputedStyle(document.documentElement).getPropertyValue(k).trim()||f};$('#cbg').value=g('--bg','#0b4f8f');$('#ccard').value=g('--card','#c2e0ff');$('#cink').value=g('--ink','#0b4a86');$('#ctx').value=g('--tx','#0b4a86')}
+function embedOf(u){var m=u.match(/open\.spotify\.com\/(?:intl-[a-z-]+\/)?(track|album|playlist|episode|artist)\/(\w+)/);if(m)return['https://open.spotify.com/embed/'+m[1]+'/'+m[2],m[1]=='track'?152:352];var y=ytId(u);if(y)return['https://www.youtube.com/embed/'+y,220];if(/music\.apple\.com/.test(u))return[u.replace('music.apple.com','embed.music.apple.com'),175];return null}
+function playTog(b){var w=b.parentNode.querySelector('.pw'),f=w.querySelector('iframe');if(f){f.remove();b.textContent='▶ 播放';return}f=document.createElement('iframe');f.src=b.dataset.em;f.height=b.dataset.h;f.style.cssText='width:100%;border:0;margin-top:8px';f.allow='autoplay; encrypted-media; clipboard-write';w.appendChild(f);b.textContent='■ 收起'}
+function meta(u,cb){fetch((/spotify/i.test(u)?'https://open.spotify.com/oembed?url=':'https://noembed.com/embed?url=')+encodeURIComponent(u)).then(function(r){return r.json()}).then(function(j){var t=(j.title||'').trim(),a=(j.author_name||'').replace(/ - Topic$/,'').trim();cb(t?(a&&a!==t?t+' • '+a:t):'')}).catch(function(){cb('')})}
+function autoMeta(){var q=document.querySelectorAll('#mo .mi'),tm;if(q.length<2)return;q[0].oninput=function(){clearTimeout(tm);tm=setTimeout(function(){var u=fixUrl(q[0].value);if(u&&!q[1].value)meta(u,function(t){if(t&&!q[1].value)q[1].value=t})},600)}}
+var STAR='<svg class="so" viewBox="0 0 24 24"><polygon points="12,1 15,9 23,9 17,14 19,23 12,18 5,23 7,14 1,9 9,9"/></svg>';
+function title(){var t=S.tt==null?'ABOUT Me':S.tt,has=/[oO]/.test(t),i=$('#ttin');$('#ttl').innerHTML=Array.from(t).map(function(c){return S.so&&/[oO]/.test(c)?STAR:esc(c)}).join('');$('#stsw').disabled=!has;$('#stsw').checked=!!(S.so&&has);if(i.value!==t)i.value=t}
+function crop(file,cb,no,a0){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){
+ var m=$('#mo'),ar=a0||1,z=1,px=.5,py=.5,A=[['原比例',0],['1:1',1],['4:3',4/3],['3:4',3/4],['16:9',16/9],['9:16',9/16]];
+ function dm(W){var H=Math.round(W/ar),b=Math.max(W/im.width,H/im.height)*z;return[H,im.width*b,im.height*b]}
+ function paint(c,W){var d=dm(W);c.width=W;c.height=d[0];c.getContext('2d').drawImage(im,(W-d[1])*px,(d[0]-d[2])*py,d[1],d[2])}
+ m.innerHTML='<div class="md"><h3>裁切照片</h3><canvas id="cv" style="width:100%;display:block;border:2px solid var(--ink);touch-action:none;cursor:grab"></canvas><div class="rt">'+A.map(function(x,k){return '<button data-r="'+k+'">'+x[0]+'</button>'}).join('')+'</div><input id="zm" type="range" min="1" max="4" step=".01" value="1" style="width:100%;accent-color:var(--ink)"><div class="mb"><button data-m="no">取消</button><button data-m="ok">確定</button></div></div>';
+ m.style.display='flex';var cv=$('#cv'),lx,ly,dn=0;paint(cv,360);
+ cv.onpointerdown=function(e){dn=1;lx=e.clientX;ly=e.clientY;cv.setPointerCapture(e.pointerId)};cv.onpointerup=function(){dn=0};
+ cv.onpointermove=function(e){if(!dn)return;var s=cv.width/cv.clientWidth,dx=(e.clientX-lx)*s,dy=(e.clientY-ly)*s,d=dm(cv.width);lx=e.clientX;ly=e.clientY;if(cv.width-d[1]<-1)px=Math.min(1,Math.max(0,px+dx/(cv.width-d[1])));if(d[0]-d[2]<-1)py=Math.min(1,Math.max(0,py+dy/(d[0]-d[2])));paint(cv,360)};
+ $('#zm').oninput=function(){z=+this.value;paint(cv,360)};
+ function shut(){m.style.display='none';m.innerHTML='';m.onclick=null}
+ m.onclick=function(e){var t=e.target.dataset||{};if(t.r!=null){ar=A[t.r][1]||im.width/im.height;px=py=.5;paint(cv,360);m.querySelectorAll('.rt button').forEach(function(x){x.classList.toggle('on',x===e.target)})}else if(t.m=='no'){shut();no&&no()}else if(t.m=='ok'){var o=document.createElement('canvas');paint(o,ar>=1?900:Math.round(900*ar));shut();cb(o.toDataURL('image/jpeg',.82))}};
+ };im.src=r.result};r.readAsDataURL(file)}
 function fit(){var c=$('#card'),w=document.documentElement.clientWidth-28;if(w<880){c.style.width='880px';c.style.zoom=w/880}else{c.style.width='';c.style.zoom=''}}
-fit();addEventListener('resize',fit);
+fit();addEventListener('resize',fit);$('#ttin').oninput=function(){S.tt=this.value;if(!/[oO]/.test(this.value))S.so=false;title();save()};$('#stsw').onchange=function(){S.so=this.checked;title();save()};title();
 </script>
 
 
