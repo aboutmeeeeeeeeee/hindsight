@@ -104,6 +104,11 @@ body:not(.edit) #top [data-e]:empty{display:none}
 #vb a{color:var(--tx)}.view #vb{display:flex}.view #bar,.view .only-edit{display:none!important}
 .bti{font-size:18px;border-bottom:3px solid var(--ink);padding-bottom:4px;margin-bottom:10px}
 body:not(.edit) .bti:has(.tx:empty){display:none}
+.fd{position:relative;margin:8px 0}.ft{white-space:pre-wrap;font-size:15px;line-height:1.7;min-height:1.7em;word-break:break-word}
+.fd .ed{position:absolute;top:2px;right:2px;padding:0 6px;font-size:12px}.box .only-edit{margin-top:8px}
+body:not(.edit) .fd:has(.ft:empty){display:none}
+.gp{position:relative;margin:14px 0 4px}.gp>.ed{position:absolute;top:0;right:0;padding:0 6px;font-size:12px}.gp .sec{margin:0 0 4px;padding-right:26px}
+body:not(.edit) .gp:has(.sec:empty):has(.ft:empty){display:none}
 </style>
 </head>
 <body>
@@ -130,11 +135,8 @@ body:not(.edit) .bti:has(.tx:empty){display:none}
     <div class="grid">
       <div class="box">
         <h2 data-e>JUST FOR A BRIEF INTRODUCTION :)</h2>
-        <div class="sec" data-e>＊KPOP</div>
-        <div class="cols"><div data-e></div><div data-e></div><div data-e></div><div data-e></div></div>
-        <div class="sec" data-e>＊OTHERS</div>
-        <div class="row" data-e></div>
-        <div class="row" data-e></div>
+        <div id="fields"><div class="gp"><button class="ed" data-a="gpd">×</button><div class="sec" data-e>＊KPOP</div><div class="fd"><div class="ft" data-e></div></div></div><div class="gp"><button class="ed" data-a="gpd">×</button><div class="sec" data-e>＊OTHERS</div><div class="fd"><div class="ft" data-e></div></div></div></div>
+        <button class="only-edit" data-a="fda">＋新增文字欄位</button>
       </div>
       <div><div class="photo" id="photo" title="點擊上傳照片"><span>＋ 點擊上傳大頭照</span></div>
         <div class="cap" data-e></div></div>
@@ -261,6 +263,8 @@ document.addEventListener('click',function(e){
   if(!b){if(lk&&EDIT)e.preventDefault();return}
   var a=b.dataset.a,i=+b.dataset.b,k=+b.dataset.i;e.preventDefault();
   if(a=='pl'){playTog(b);return}
+  if(a=='fda'){var ng=mkG('＊新標題','');$('#fields').appendChild(ng);ng.querySelector('.sec').focus();save();return}
+  if(a=='gpd'){b.closest('.gp').remove();save();return}
   if(a=='pv'||a=='nx'){var c=b.closest('.car');c.scrollBy({left:(a=='nx'?1:-1)*c.clientWidth,behavior:'smooth'});return}
   if(a=='dl'){lk.remove()}
   else if(a=='url'){var h=lk.getAttribute('href'),has=h&&h!='#';ask({t:'連結網址',f:[{ph:'https://',v:has?h:''}],rm:has},function(v,t){if(t=='rm'){lk.setAttribute('href','#');lk.removeAttribute('target');deco(lk);save();return}var u=fixUrl(v[0]);if(!u)return '請輸入有效的網址';lk.setAttribute('href',u);lk.target='_blank';lk.rel='noopener';deco(lk);save()})}
@@ -283,7 +287,7 @@ function deco(l){var o=l.querySelector('.ytm,.ytf');if(o)o.remove();var y=ytThum
 function lk(x,b,j){var y=ytThumb(x.u),d=' data-b="'+b+'" data-i="'+j+'"';return '<a class="lk'+(y?' yt':'')+'" href="'+esc(x.u||'#')+'"'+(x.u?' target="_blank" rel="noopener"':'')+'>'+y+'<span class="t tx"'+d+' data-f="kn" data-ph="連結名稱" contenteditable="'+EDIT+'">'+esc(x.n)+'</span><button class="ed" data-a="bku"'+d+'>網址</button><button class="ed" data-a="bkd"'+d+'>×</button></a>'}
 document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('.lk');if(l&&(EDIT||e.target.closest('button')))e.preventDefault()},true);
 document.addEventListener('error',function(e){var t=e.target;if(t.classList&&t.classList.contains('ytm')){var d=document.createElement('div');d.className='ytf';d.textContent='▶ YouTube';t.replaceWith(d)}},true);
-function boot(V){try{var d=V||JSON.parse(localStorage.getItem(KEY)||'null'),I=window.__INIT;if(!V&&I&&(!d||(d.v||0)<I.v))d=I;if(d){d=norm(d);S=d;document.documentElement.setAttribute('style',d.st||'');if(d.h&&d.h.indexOf('｜')<0){var H=d.h;['KickFlip — Donghyeon (Lee)','RIIZE — Osaki Shotaro','NEXZ — Nishiyama Yuki','Tomorrow X Together — Taehyun','Authors — 不朽, 川村元氣','Singers/Band etc. — LANY, RM (BTS), Fujii Kaze, DAY6, etc...','also attracted by some solitude.','also attracted by some solitude'].forEach(function(x){H=H.split(x).join('')});$('#top').innerHTML=H}if(d.f){var o=Array.from($('#font').options).filter(function(x){return x.value.split(',')[0]==d.f.split(',')[0]})[0];if(o)d.f=o.value;$('#font').value=d.f;document.documentElement.style.setProperty('--font',d.f)}syncC()}}catch(e){}
+function boot(V){try{var d=V||JSON.parse(localStorage.getItem(KEY)||'null'),I=window.__INIT;if(!V&&I&&(!d||(d.v||0)<I.v))d=I;if(d){d=norm(d);S=d;document.documentElement.setAttribute('style',d.st||'');if(d.h&&d.h.indexOf('｜')<0){var H=d.h;['KickFlip — Donghyeon (Lee)','RIIZE — Osaki Shotaro','NEXZ — Nishiyama Yuki','Tomorrow X Together — Taehyun','Authors — 不朽, 川村元氣','Singers/Band etc. — LANY, RM (BTS), Fujii Kaze, DAY6, etc...','also attracted by some solitude.','also attracted by some solitude'].forEach(function(x){H=H.split(x).join('')});$('#top').innerHTML=H;migrate()}if(d.f){var o=Array.from($('#font').options).filter(function(x){return x.value.split(',')[0]==d.f.split(',')[0]})[0];if(o)d.f=o.value;$('#font').value=d.f;document.documentElement.style.setProperty('--font',d.f)}syncC()}}catch(e){}
 drawBC();setEdit(false);title()}
 var Q=new URLSearchParams(location.search).get('u');
 if(Q){window.VIEW=1;document.body.classList.add('view');boot({b:[],bc:'0'});api('/rest/v1/profiles?username=eq.'+encodeURIComponent(Q)+'&select=data',{auth:false}).then(function(r){if(r&&r[0])boot(r[0].data);else info('找不到這個頁面')}).catch(function(){info('載入失敗，請稍後再試')})}else boot();
@@ -307,6 +311,16 @@ function crop(file,cb,no,a0){var r=new FileReader();r.onload=function(){var im=n
  function shut(){m.style.display='none';m.innerHTML='';m.onclick=null}
  m.onclick=function(e){var t=e.target.dataset||{};if(t.r!=null){ar=A[t.r][1]||im.width/im.height;px=py=.5;paint(cv,360);m.querySelectorAll('.rt button').forEach(function(x){x.classList.toggle('on',x===e.target)})}else if(t.m=='no'){shut();no&&no()}else if(t.m=='ok'){var o=document.createElement('canvas');paint(o,ar>=1?900:Math.round(900*ar));shut();cb(o.toDataURL('image/jpeg',.82))}};
  };im.src=r.result};r.readAsDataURL(file)}
+function mkG(h,b){var g=document.createElement('div');g.className='gp';g.innerHTML='<button class="ed" data-a="gpd">×</button><div class="sec" data-e></div><div class="fd"><div class="ft" data-e></div></div>';g.querySelector('.sec').textContent=h;g.querySelector('.ft').textContent=b;return g}
+function migrate(){var t=$('#top'),bx=t.querySelector('.box');if(!bx||t.querySelector('.gp'))return;var L=[],ft=t.querySelector('#fields .ft');
+ if(ft){var c=ft.cloneNode(true);c.querySelectorAll('br').forEach(function(x){x.replaceWith('\n')});c.querySelectorAll('div').forEach(function(x){x.before('\n')});c.textContent.split('\n').forEach(function(l){l=l.trim();L.push([/^[＊*]/.test(l),l])})}
+ else if(t.querySelector('.sec,.cols,.row')){t.querySelectorAll('.sec,.cols>div,.row').forEach(function(e){L.push([e.classList.contains('sec'),e.textContent.trim()])})}
+ else return;
+ ['#fields','.sec','.cols','.row','[data-a="fda"]'].forEach(function(q){t.querySelectorAll(q).forEach(function(e){e.remove()})});
+ var G=[],cur=null;L.forEach(function(x){if(x[0]){cur={h:x[1],l:[]};G.push(cur)}else{if(!cur){if(!x[1])return;cur={h:'',l:[]};G.push(cur)}cur.l.push(x[1])}});
+ if(!G.length)G=[{h:'＊KPOP',l:[]},{h:'＊OTHERS',l:[]}];
+ var f=document.createElement('div');f.id='fields';G.forEach(function(g){f.appendChild(mkG(g.h,g.l.join('\n').replace(/\n{3,}/g,'\n\n').trim()))});bx.appendChild(f);
+ var b=document.createElement('button');b.className='only-edit';b.setAttribute('data-a','fda');b.textContent='＋新增文字欄位';bx.appendChild(b)}
 function fit(){var g=$('.cg');if(g){g.style.zoom='';var k=g.clientWidth/g.scrollWidth;if(k<1)g.style.zoom=Math.max(.5,k)}var c=$('#card'),w=document.documentElement.clientWidth-28;if(w<880){c.style.width='880px';c.style.zoom=w/880}else{c.style.width='';c.style.zoom=''}}
 fit();addEventListener('resize',fit);addEventListener('load',fit);$('#ttin').oninput=function(){S.tt=this.value;if(!/[oO]/.test(this.value))S.so=false;title();save()};$('#stsw').onchange=function(){S.so=this.checked;title();save()};title();
 </script>
