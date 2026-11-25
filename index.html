@@ -203,7 +203,7 @@ $('#f').onchange=function(){var fs=Array.from(this.files),t=T;this.value='';(fun
 $('#addlk').onclick=function(){var a=document.createElement('a');a.className='lk';a.href='#';a.innerHTML='<span class="t" data-e contenteditable="true">新連結</span><button class="ed" data-a="url">網址</button><button class="ed" data-a="dl">×</button>';$('#links').appendChild(a);save()};
 $('#addb').onclick=function(){S.b.push({s:'m',l:'grid',p:[],t:'',m:null});render();save()};
 function ask(o,cb){var m=$('#mo');function shut(){m.style.display='none';m.innerHTML=''}
-  m.innerHTML='<div class="md"><h3>'+o.t+'</h3>'+(o.msg?'<p>'+o.msg+'</p>':'')+(o.f||[]).map(function(f){return '<input class="mi"'+(f.t?' type="'+f.t+'"':'')+' placeholder="'+esc(f.ph)+'" value="'+esc(f.v)+'">'}).join('')+'<div class="er"></div><div class="mb">'+(o.rm?'<button data-m="rm">'+(o.rl||'移除')+'</button>':'')+'<button data-m="no">取消</button><button data-m="ok">確定</button></div></div>';
+  m.innerHTML='<div class="md"><h3>'+o.t+'</h3>'+(o.msg?'<p>'+o.msg+'</p>':'')+(o.f||[]).map(function(f){return '<input class="mi" autocapitalize="off" autocorrect="off" spellcheck="false"'+(f.t?' type="'+f.t+'"':'')+' placeholder="'+esc(f.ph)+'" value="'+esc(f.v)+'">'}).join('')+'<div class="er"></div><div class="mb">'+(o.rm?'<button data-m="rm">'+(o.rl||'移除')+'</button>':'')+'<button data-m="no">取消</button><button data-m="ok">確定</button></div></div>';
   m.style.display='flex';var ins=m.querySelectorAll('input'),er=m.querySelector('.er');if(ins[0])ins[0].focus();
   function go(t){var r=cb(Array.prototype.map.call(ins,function(x){return x.value.trim()}),t);if(typeof r=='string'){er.textContent=r;return}shut()}
   m.onclick=function(e){var t=e.target.dataset&&e.target.dataset.m;if(e.target===m||t=='no')shut();else if(t)go(t)};
@@ -235,7 +235,7 @@ function okurl(u){return /^https?:\/\//i.test(u||'')?String(u):''}
 function okm(m){return m&&okurl(m.u)?{u:okurl(m.u),n:String(m.n||'').slice(0,120)}:null}
 function clean(h){var t=document.createElement('template');t.innerHTML=String(h||'');t.content.querySelectorAll('script,iframe,object,embed,style,link,meta,base,form,svg,math,template').forEach(function(x){x.remove()});t.content.querySelectorAll('*').forEach(function(e){Array.from(e.attributes).forEach(function(a){var n=a.name.toLowerCase(),v=a.value.trim();if(n.slice(0,2)=='on'||n=='style'||(/^(href|src|action|formaction|xlink:href)$/.test(n)&&!/^(https?:|data:image\/(jpeg|png|webp|gif);base64,|#)/i.test(v)))e.removeAttribute(a.name)});if(e.tagName=='A')e.setAttribute('rel','noopener noreferrer')});return t.innerHTML}
 function norm(d){var o={v:+d.v||0,h:d.h?clean(d.h):'',f:String(d.f||''),tt:d.tt==null?null:String(d.tt).slice(0,60),so:!!d.so,bc:String(d.bc||'0').replace(/\D/g,'').slice(0,20)||'0'};
- o.st=(String(d.st||'').match(/--(?:bg|card|ink|soft|tx):#[0-9a-fA-F]{3,8}/g)||[]).join(';');
+ o.st=(String(d.st||'').match(/--(?:bg|card|ink|soft|tx):\s*#[0-9a-fA-F]{3,8}/g)||[]).map(function(x){return x.replace(/\s+/g,'')}).join(';');
  if(Array.from($('#font').options).every(function(x){return x.value.split(',')[0]!=o.f.split(',')[0]}))o.f='';
  o.b=(Array.isArray(d.b)?d.b:[]).slice(0,50).map(function(b){b=b||{};return{s:SZ[b.s]?b.s:'m',l:LY[b.l]?b.l:'grid',o:OR[b.o]?b.o:(b.o=='h'?'p':'v'),t:String(b.t||''),ti:String(b.ti||''),cp:String(b.cp||''),m:okm(b.m),
   k:(Array.isArray(b.k)?b.k:[]).slice(0,30).map(function(x){x=x||{};return{n:String(x.n||''),u:okurl(x.u)}}),
@@ -246,8 +246,8 @@ function fresh(){if(!A||Date.now()<A.exp)return Promise.resolve();return api('/a
 function out(){A=null;try{localStorage.removeItem('sb-auth');localStorage.removeItem('sb-un')}catch(e){}uiAuth()}
 function uiAuth(){var b=$('#lg');if(b)b.textContent=A?'👤 登出':'👤 登入／註冊'}
 function info(m){ask({t:'提示',msg:m},function(){})}
-function login(){ask({t:'登入／註冊',msg:'輸入信箱與密碼（至少 6 碼）。第一次使用請按「註冊」。',f:[{ph:'email',v:''},{ph:'password',v:'',t:'password'}],rm:true,rl:'註冊'},function(v,t){if(!v[0]||v[1].length<6)return '請輸入信箱與至少 6 碼的密碼';
- api(t=='rm'?'/auth/v1/signup':'/auth/v1/token?grant_type=password',{m:'POST',auth:false,b:{email:v[0],password:v[1]}}).then(function(j){if(j&&j.access_token){setA(j);uiAuth();pull()}else info('已寄出驗證信，請到信箱點確認連結後，再回來登入。')}).catch(function(e){info('失敗：'+((e.j&&(e.j.msg||e.j.error_description||e.j.message))||e.status))})})}
+function login(){ask({t:'登入／註冊',msg:'輸入信箱與密碼（至少 6 碼）。第一次使用請按「註冊」。',f:[{ph:'email',v:'',t:'email'},{ph:'password',v:'',t:'password'}],rm:true,rl:'註冊'},function(v,t){if(!v[0]||v[1].length<6)return '請輸入信箱與至少 6 碼的密碼';
+ api(t=='rm'?'/auth/v1/signup':'/auth/v1/token?grant_type=password',{m:'POST',auth:false,b:{email:v[0].toLowerCase(),password:v[1]}}).then(function(j){if(j&&j.access_token){setA(j);uiAuth();pull()}else info('已寄出驗證信，請到信箱點確認連結後，再回來登入。')}).catch(function(e){info('失敗：'+((e.j&&(e.j.msg||e.j.error_description||e.j.message))||e.status))})})}
 function pull(){fresh().then(function(){return api('/rest/v1/profiles?id=eq.'+A.uid+'&select=username,data')}).then(function(r){if(r&&r[0]){try{localStorage.setItem('sb-un',r[0].username)}catch(e){}ask({t:'載入雲端版本？',msg:'你的雲端已有頁面，要載入並取代目前畫面嗎？（本機尚未儲存的修改會消失）'},function(){boot(r[0].data);save()})}else info('登入成功！編輯完成後按「☁ 儲存到雲端」。')}).catch(function(){})}
 function cloud(){if(!A)return login();fresh().then(function(){var un=null;try{un=localStorage.getItem('sb-un')}catch(e){}if(un)return doSave(un);
  ask({t:'設定你的網址名稱',msg:'3–20 個小寫英文、數字或底線。別人會用「?u=名稱」看你的頁面，設定後不能更改。',f:[{ph:'username',v:''}]},function(v){var u=v[0].toLowerCase();if(!/^[a-z0-9_]{3,20}$/.test(u))return '格式不符：請用 3–20 個小寫英文、數字或底線';doSave(u)})})}
